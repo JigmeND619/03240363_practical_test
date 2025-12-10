@@ -24,49 +24,4 @@ problem3_comparison.png - Buggy vs Fixed comparison
 
 Outputs for each problem codes:
 
-============================================================
-PROBLEM 1: Q-LEARNING ON GRIDWORLD
-============================================================
-GridWorld initialized with 21 valid states
-Training Q-learning for 1000 episodes...
-Parameters: alpha=0.1, gamma=0.99, epsilon=0.1
-------------------------------------------------------------
-Episode 100: Avg Reward (100) = 8.01
-Episode 200: Avg Reward (100) = 8.83
-Episode 300: Avg Reward (100) = 9.08
-Episode 400: Avg Reward (100) = 8.97
-Episode 500: Avg Reward (100) = 8.94
-Episode 600: Avg Reward (100) = 8.88
-Episode 700: Avg Reward (100) = 8.94
-Episode 800: Avg Reward (100) = 8.92
-Episode 900: Avg Reward (100) = 8.93
-Episode 1000: Avg Reward (100) = 8.94
-------------------------------------------------------------
-Training complete!
-Final average reward (last 100): 8.94
-
-Learned Policy:
--------------------------
-S  →  ↓  ←  ↓
-↓  #  ↓  #  ↓
-→  →  ↓  #  ↓
-↑  #  →  →  ↓
-→  →  →  →  G
--------------------------
-
-Plot saved as 'problem1_results.png'
-
-Testing agent for 20 episodes...
-Success rate: 20/20 (100.0%)
-Average steps to goal: 8.0
-
-Q-table Statistics:
-  Shape: (21, 4)
-  Non-zero values: 80/84
-  Max Q-value: 10.00
-  Min Q-value: -0.38
-
-============================================================
-PROBLEM 1 COMPLETE!
-============================================================
 
