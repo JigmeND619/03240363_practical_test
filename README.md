@@ -22,6 +22,8 @@ problem1_results.png - GridWorld training curves
 problem2_results.png - CartPole DQN training
 problem3_comparison.png - Buggy vs Fixed comparison
 
-Outputs for each problem codes:
+Note: The reason why I included the outputs for each codes as a separate file is because I had to run the codes on google colab as my Visual Studio was having some technical issues. Thank you for your understanding.
+
+
 
 
