@@ -1,0 +1,72 @@
+============================================================
+PROBLEM 3: DEBUGGING Q-LEARNING
+============================================================
+
+BUG ANALYSIS:
+------------------------------------------------------------
+Bug 1: Q-table initialization
+  Issue: Actually OK, but should verify dimensions
+  Impact: Low
+  Fix: Ensure Q = np.zeros((n_states, n_actions))
+
+Bug 2: Action selection (CRITICAL)
+  Issue: Using np.argmin instead of np.argmax
+  Impact: Agent chooses WORST actions, not BEST
+  Fix: Change to np.argmax(Q[state])
+
+Bug 3: Q-learning update rule (CRITICAL)
+  Issue: Missing learning rate, overwrites Q-values
+  Impact: No gradual learning, unstable updates
+  Fix: Q[s,a] += alpha * (target - Q[s,a])
+
+Bug 4: Epsilon decay (IMPORTANT)
+  Issue: Epsilon never decreases
+  Impact: Agent never exploits learned knowledge
+  Fix: epsilon = max(epsilon_min, epsilon * decay)
+------------------------------------------------------------
+
+============================================================
+Training BUGGY version...
+============================================================
+Buggy version success rate: 0.0
+
+============================================================
+Training FIXED version...
+============================================================
+FrozenLake Environment:
+  States: 16
+  Actions: 4
+------------------------------------------------------------
+Training with:
+  Learning rate (alpha): 0.1
+  Discount factor (gamma): 0.99
+  Initial epsilon: 1.0
+  Epsilon decay: 0.9995
+------------------------------------------------------------
+Episode 1000: Success rate (100) = 0.050, Epsilon = 0.606
+Episode 2000: Success rate (100) = 0.090, Epsilon = 0.368
+Episode 3000: Success rate (100) = 0.160, Epsilon = 0.223
+Episode 4000: Success rate (100) = 0.420, Epsilon = 0.135
+Episode 5000: Success rate (100) = 0.430, Epsilon = 0.082
+
+Final success rate: 0.430
+
+============================================================
+COMPARISON RESULTS
+============================================================
+
+Buggy Implementation:
+  Success rate: 0.000
+  Total successes: 9
+
+Fixed Implementation:
+  Success rate: 0.430
+  Total successes: 917
+
+Improvement: 0.430
+
+Comparison plot saved as 'problem3_comparison.png'
+
+============================================================
+PROBLEM 3 COMPLETE!
+============================================================
